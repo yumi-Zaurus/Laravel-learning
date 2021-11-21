@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\TopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +21,10 @@ Route::get('/', function () {
 });
 
 Route::get('/user', [UserController::class, 'index']);
+
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+
+Route::get('/top', [TopController::class, 'index'])->name('top');
+
+
