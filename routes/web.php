@@ -30,5 +30,5 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/top', [TopController::class, 'index'])->name('top');
 
 Route::get('/staff', [StaffController::class, 'index']);
-Route::get('/staffAdd', [StaffController::class, 'add'])->name('staffAdd');
+Route::get('/staff-add', [StaffController::class, 'add'])->name('staffAdd');
 

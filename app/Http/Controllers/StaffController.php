@@ -17,6 +17,6 @@ class StaffController extends Controller
     }
     public function add()
     {
-        return view('staffAdd');
+        return view('staff-add');
     }
 }
