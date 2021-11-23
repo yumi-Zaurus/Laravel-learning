@@ -12,6 +12,10 @@ class LoginController extends Controller
     {
         return view('login');
     }
+
+    /**
+     * ログイン認証
+     */
     public function login(Request $request)
     {
         $username = $request->input('username');
