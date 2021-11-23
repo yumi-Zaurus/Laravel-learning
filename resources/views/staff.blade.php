@@ -11,21 +11,24 @@ Staff一覧ページです
     <input type="search" name="staff_search" placeholder="検索したいスタッフ名">
     <input type="submit" name="search_button" value="検索">
 </form>
-  <table border="1">
-    <tr>
-      <th>名前</th>
-      <th>名前（かな）</th>
-      <th>職種</th>
-    </tr>
-    @foreach ($staffs as $key => $staff)
+<form action="">
+    <table border="1">
         <tr>
-            <td>{{ $staff->name }}</td>
-            <td>{{ $staff->name_kana }}</td>
-            <td>{{ $staff->staff_type }}</td>
+            <th>名前</th>
+            <th>名前（かな）</th>
+            <th>職種</th>
         </tr>
-    @endforeach
-  </table>
-  <a href="{{ route('staffAdd') }}">スタッフ追加</a>
-  {{ csrf_field() }}
+        @foreach ($staffs as $key => $staff)
+            <tr>
+                <td>{{ $staff->name }}</td>
+                <td>{{ $staff->name_kana }}</td>
+                <td>{{ $staff->staff_type }}</td>
+                <td><a href="{{ route('staffDelete') }}">削除</a></td>
+            </tr>
+        @endforeach
+    </table>
+</form>
+<a href="{{ route('staffAdd') }}">スタッフ追加</a>
+{{ csrf_field() }}
 </body>
 </html>

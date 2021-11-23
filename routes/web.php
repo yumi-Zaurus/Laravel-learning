@@ -34,3 +34,4 @@ Route::get('/staff-add', [StaffController::class, 'add'])->name('staffAdd');
 Route::get('/staff-search', [StaffController::class, 'search'])->name('staffSearch');
 Route::post('/staff-confirm', [StaffController::class, 'confirm'])->name('staffConfirm');
 Route::post('/staff-register', [StaffController::class, 'register'])->name('staffRegister');
+Route::get('/staff-delete', [StaffController::class, 'delete'])->name('staffDelete');

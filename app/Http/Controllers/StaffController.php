@@ -64,4 +64,12 @@ class StaffController extends Controller
 
         return redirect(route('staffHome'));
     }
+    
+    /**
+     * スタッフデータ削除
+     */
+    public function delete()
+    {
+        return view('staff-delete');
+    }
 }
