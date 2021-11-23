@@ -24,6 +24,7 @@ Staff一覧ページです
                 <td>{{ $staff->name_kana }}</td>
                 <td>{{ $staff->staff_type }}</td>
                 <td><a href="{{ route('staffDelete') }}">削除</a></td>
+                <td><a href="{{ route('staffEdit', ['id' => $staff->id]) }}">変更</a></td>
             </tr>
         @endforeach
     </table>

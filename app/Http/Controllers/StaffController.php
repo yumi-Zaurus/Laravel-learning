@@ -72,4 +72,19 @@ class StaffController extends Controller
     {
         return view('staff-delete');
     }
+
+    /**
+     * スタッフデータ変更
+     */
+    public function edit($id)
+    {
+        $data = Staff::find($id);
+        $staff_name = $data->name;
+        $staff_name_kana = $data->name_kana;
+        $staff_type = $data->staff_type;
+        var_dump($staff_name);
+        var_dump($staff_name_kana);
+        var_dump($staff_type);
+        // return view('staff-edit');
+    }
 }
