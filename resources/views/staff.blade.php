@@ -1,13 +1,13 @@
-Staff一覧ページです
+@extends('adminlte::page')
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>スタッフ一覧</title>
-</head>
-<body>
+@section('title', 'スタッフ一覧')
+
+@section('content_header')
+    <h1>スタッフ一覧</h1>
+@stop
+
+@section('content')
 <form method="get" action="{{ route('staffSearch') }}">
-    {{ csrf_field() }}
     <input type="search" name="staff_search" placeholder="検索したいスタッフ名">
     <input type="submit" name="search_button" value="検索">
 </form>
@@ -30,6 +30,12 @@ Staff一覧ページです
     </table>
 </form>
 <a href="{{ route('staffAdd') }}">スタッフ追加</a>
-{{ csrf_field() }}
-</body>
-</html>
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
+@stop

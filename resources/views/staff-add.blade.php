@@ -1,7 +1,15 @@
-スタッフ追加しますよ！
+@extends('adminlte::page')
+
+@section('title', 'スタッフ登録')
+
+@section('content_header')
+    <h1>スタッフ登録</h1>
+@stop
+
+@section('content')
 
 <form method="post" action="{{ route('staffConfirm') }}">
-    {{ csrf_field() }}
+  {{ csrf_field() }}
   <label for="staff_name">スタッフの名前：</label>
   <input type="text" name="staff_name" maxlength="10" value="" placeholder="スタッフの名前" id="staff_name">
   <br>
@@ -13,3 +21,14 @@
   <br>
   <input type="submit" name="register" value="登録">
 </form>
+@stop
+
+@section('css')
+<link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+<script>
+  console.log('Hi!');
+</script>
+@stop
