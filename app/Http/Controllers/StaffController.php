@@ -94,9 +94,9 @@ class StaffController extends Controller
         $staff_type = $request->input('staff_type');
 
         $staff = Staff::find($staff_id);
-        $staff-> name = $staff_name;
-        $staff-> name_kana = $staff_name_kana;
-        $staff-> staff_type = $staff_type;
+        $staff->name = $staff_name;
+        $staff->name_kana = $staff_name_kana;
+        $staff->staff_type = $staff_type;
         $staff->save();
         
         return redirect(route('staffHome'));
