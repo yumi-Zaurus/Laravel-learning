@@ -22,22 +22,27 @@ use App\Http\Controllers\PatientController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
-
-Route::get('/user', [UserController::class, 'index']);
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/staff', [StaffController::class, 'index'])->name('staffHome');
-Route::get('/staff-add', [StaffController::class, 'add'])->name('staffAdd');
-Route::get('/staff-search', [StaffController::class, 'search'])->name('staffSearch');
-Route::post('/staff-confirm', [StaffController::class, 'confirm'])->name('staffConfirm');
-Route::post('/staff-register', [StaffController::class, 'register'])->name('staffRegister');
-Route::get('/staff-delete', [StaffController::class, 'delete'])->name('staffDelete');
-Route::get('/staff/{id}', [StaffController::class, 'edit'])->name('staffEdit');
-Route::post('/staff-update', [StaffController::class, 'update'])->name('staffUpdate');
+Route::group(['middleware' => ['auth']], function () {
+    // ホーム
+    Route::get('/home', function () {
+        return view('home');
+    })->name('home');
 
-Route::get('/patient', [PatientController::class, 'index'])->name('patientHome');
+    // スタッフ
+    Route::get('/staff', [StaffController::class, 'index'])->name('staffHome');
+    Route::get('/staff-add', [StaffController::class, 'add'])->name('staffAdd');
+    Route::get('/staff-search', [StaffController::class, 'search'])->name('staffSearch');
+    Route::post('/staff-confirm', [StaffController::class, 'confirm'])->name('staffConfirm');
+    Route::post('/staff-register', [StaffController::class, 'register'])->name('staffRegister');
+    Route::get('/staff-delete', [StaffController::class, 'delete'])->name('staffDelete');
+    Route::get('/staff/{id}', [StaffController::class, 'edit'])->name('staffEdit');
+    Route::post('/staff-update', [StaffController::class, 'update'])->name('staffUpdate');
+
+    // 患者
+    Route::get('/patient', [PatientController::class, 'index'])->name('patientHome');
+});

@@ -23,10 +23,21 @@ class LoginController extends Controller
         $adminData = AdminUser::where('login_id', $username)
             ->where('password', $password)
             ->first();
+
         if (is_null($adminData)) {
             return redirect(route('login'));
         } else {
+            session(['isLogin' => true]);
             return redirect(route('home'));
         }
+    }
+
+    /**
+     * ログアウト
+     */
+    public function logout()
+    {
+        session()->forget('isLogin');
+        return redirect(route('login'));
     }
 }
