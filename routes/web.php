@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TopController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\PatientController;
 
 
 /*
@@ -40,3 +41,5 @@ Route::post('/staff-register', [StaffController::class, 'register'])->name('staf
 Route::get('/staff-delete', [StaffController::class, 'delete'])->name('staffDelete');
 Route::get('/staff/{id}', [StaffController::class, 'edit'])->name('staffEdit');
 Route::post('/staff-update', [StaffController::class, 'update'])->name('staffUpdate');
+
+Route::get('/patient', [PatientController::class, 'index'])->name('patientHome');
