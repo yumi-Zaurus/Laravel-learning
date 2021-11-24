@@ -74,17 +74,31 @@ class StaffController extends Controller
     }
 
     /**
-     * スタッフデータ変更
+     * スタッフデータ編集
      */
     public function edit($id)
     {
         $data = Staff::find($id);
-        $staff_name = $data->name;
-        $staff_name_kana = $data->name_kana;
-        $staff_type = $data->staff_type;
-        var_dump($staff_name);
-        var_dump($staff_name_kana);
-        var_dump($staff_type);
-        // return view('staff-edit');
+
+        return view('staff-edit')->with('data',$data);
+    }
+
+    /**
+     * スタッフデータ更新
+     */
+    public function update(Request $request)
+    {
+        $staff_id = $request->input('staff_id');
+        $staff_name = $request->input('staff_name');
+        $staff_name_kana = $request->input('staff_name_kana');
+        $staff_type = $request->input('staff_type');
+
+        $staff = Staff::find($staff_id);
+        $staff-> name = $staff_name;
+        $staff-> name_kana = $staff_name_kana;
+        $staff-> staff_type = $staff_type;
+        $staff->save();
+        
+        return redirect(route('staffHome'));
     }
 }
