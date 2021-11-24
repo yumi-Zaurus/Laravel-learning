@@ -26,7 +26,7 @@ class LoginController extends Controller
         if (is_null($adminData)) {
             return redirect(route('login'));
         } else {
-            return redirect(route('top'));
+            return redirect(route('home'));
         }
     }
 }

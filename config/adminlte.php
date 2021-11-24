@@ -246,27 +246,36 @@ return [
         //     'url'  => 'admin/blog',
         //     'can'  => 'manage-blog',
         // ],
+        // [
+        //     'text'        => 'pages',
+        //     'url'         => 'admin/pages',
+        //     'icon'        => 'far fa-fw fa-file',
+        //     'label'       => 4,
+        //     'label_color' => 'success',
+        // ],
+        // ['header' => 'account_settings'],
+        // [
+        //     'text' => 'profile',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-user',
+        // ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => '予約管理',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-calendar-alt',
+            'text'    => '予約',
+            'icon'    => 'fas fa-fw fa-calendar-alt',
+            'submenu' => [
+                [
+                    'text' => '予約一覧',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => '予約登録',
+                    'url'  => '#',
+                ],
+            ],
         ],
         [
             'text'    => '患者',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fas fa-fw fa-tooth',
             'submenu' => [
                 [
                     'text' => '患者一覧',
@@ -280,7 +289,7 @@ return [
         ],
         [
             'text'    => 'スタッフ',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fas fa-fw fa-user-alt',
             'submenu' => [
                 [
                     'text' => 'スタッフ一覧',
@@ -294,7 +303,7 @@ return [
         ],
         [
             'text'    => '管理者',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fas fa-fw fa-user-edit',
             'submenu' => [
                 [
                     'text' => '管理者一覧',

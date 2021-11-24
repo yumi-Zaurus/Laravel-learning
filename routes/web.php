@@ -24,14 +24,12 @@ Route::get('/', function () {
 });
 Route::get('/home', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/user', [UserController::class, 'index']);
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login'])->name('login');
-
-Route::get('/top', [TopController::class, 'index'])->name('top');
 
 Route::get('/staff', [StaffController::class, 'index'])->name('staffHome');
 Route::get('/staff-add', [StaffController::class, 'add'])->name('staffAdd');
