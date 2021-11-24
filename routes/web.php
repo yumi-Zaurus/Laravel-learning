@@ -21,6 +21,9 @@ use App\Http\Controllers\StaffController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', function () {
+    return view('home');
+});
 
 Route::get('/user', [UserController::class, 'index']);
 
