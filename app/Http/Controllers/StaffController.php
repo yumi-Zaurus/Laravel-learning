@@ -102,3 +102,8 @@ class StaffController extends Controller
         return redirect(route('staffHome'));
     }
 }
+
+
+/**
+ * TODO: 登録するとき・・・職種名、DBに登録するとき・・・数字、職種名と数字を対応させる
+ */
