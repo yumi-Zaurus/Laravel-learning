@@ -281,11 +281,11 @@ return [
             'submenu' => [
                 [
                     'text' => '患者一覧',
-                    'url'  => '#',
+                    'url'  => '/patient',
                 ],
                 [
                     'text' => '患者登録',
-                    'url'  => '#',
+                    'url'  => '/patient-add',
                 ],
             ],
         ],
