@@ -42,7 +42,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/staff-delete', [StaffController::class, 'delete'])->name('staffDelete');
     Route::get('/staff/{id}', [StaffController::class, 'edit'])->name('staffEdit');
     Route::post('/staff-update', [StaffController::class, 'update'])->name('staffUpdate');
+    // TODO: 削除の設定
 
     // 患者
     Route::get('/patient', [PatientController::class, 'index'])->name('patientHome');
+    Route::get('/patient/{id}', [PatientController::class, 'info'])->name('patientInfo');
+    Route::get('/patient/{id}/edit', [PatientController::class, 'edit'])->name('patientEdit');
+    Route::get('/patient-add', [PatientController::class, 'add'])->name('patientAdd');
 });
