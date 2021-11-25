@@ -17,6 +17,7 @@
             <th>名前</th>
             <th>名前（かな）</th>
             <th>職種</th>
+            <th colspan="2">編集</th>
         </tr>
         @foreach ($staffs as $key => $staff)
             <tr>
