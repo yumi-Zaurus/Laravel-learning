@@ -10,31 +10,7 @@
 <!-- <form method="get" action="{{ route('staffSearch') }}">
     <input type="search" name="staff_search" placeholder="検索したいスタッフ名">
     <input type="submit" name="search_button" value="検索">
-<<<<<<< HEAD
-</form>
-<form action="">
-    <table border="1">
-        <tr>
-            <th>名前</th>
-            <th>名前（かな）</th>
-            <th>職種</th>
-            <th colspan="2">編集</th>
-        </tr>
-        @foreach ($staffs as $key => $staff)
-            <tr>
-                <td>{{ $staff->name }}</td>
-                <td>{{ $staff->name_kana }}</td>
-                <td>{{ $staff->staff_type }}</td>
-                <td><a href="{{ route('staffDelete') }}">削除</a></td>
-                <td><a href="{{ route('staffEdit', ['id' => $staff->id]) }}">変更</a></td>
-            </tr>
-        @endforeach
-    </table>
-</form>
-<a href="{{ route('staffAdd') }}">スタッフ追加</a>
-=======
 </form> -->
-
 
 <div class="card">
     <div class="card-header">
@@ -59,8 +35,7 @@
                                 <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">名前</th>
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">名前（かな）</th>
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">職種</th>
-                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending"></th>
-                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending"></th>
+                                <th colspan="2">編集</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -109,7 +84,6 @@
     </div>
     <!-- /.card-body -->
 </div>
->>>>>>> 9443c2e30e3eedf3a7aa7fa68ce326d935acc5ca
 @stop
 
 @section('css')
