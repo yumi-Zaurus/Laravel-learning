@@ -13,14 +13,13 @@
 </form> -->
 
 <div class="card">
-    <div class="card-header">
+    <!-- <div class="card-header">
         <div class="row">
             <a class="col-3" href="{{ route('staffAdd') }}">スタッフを追加する</a>
             <input type="search" class="form-control col-3" name="staff_search" placeholder="スタッフ名">
             <input type="submit" class="btn btn-primary" value="検索">
         </div>
-    </div>
-    <!-- /.card-header -->
+    </div> -->
     <div class="card-body">
         <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
             <div class="row">
@@ -35,7 +34,7 @@
                                 <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">名前</th>
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">名前（かな）</th>
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">職種</th>
-                                <th colspan="2">編集</th>
+                                <th colspan="2"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,8 +42,8 @@
                             <tr class="{{ ($staff->id % 2) == 0 ? 'even' : 'odd' }}">
                                 <td>{{ $staff->name }}</td>
                                 <td>{{ $staff->name_kana }}</td>
-                                <td>{{ $staff->staff_type }}</td>
-                                <td><a href="{{ route('staffEdit', ['id' => $staff->id]) }}">変更</a></td>
+                                <td>{{ $positions[$staff->staff_type]->name }}</td>
+                                <td><a href="{{ route('staffEdit', ['id' => $staff->id]) }}" role="button">編集</a></td>
                                 <td>削除</td>
                             </tr>
                             @endforeach
@@ -82,16 +81,22 @@
             </div>
         </div>
     </div>
-    <!-- /.card-body -->
 </div>
 @stop
 
 @section('css')
-<link rel="stylesheet" href="/css/admin_custom.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 @stop
 
 @section('js')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+@if (session('flash_message'))
 <script>
-    console.log('Hi!');
+    // フラッシュメッセージのfadeout
+    $(function() {
+        toastr.success("{{ session('flash_message') }}");
+    });
 </script>
+@endif
 @stop

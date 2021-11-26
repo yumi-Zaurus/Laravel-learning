@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Staff;
+use App\Models\Position;
 
 
 
@@ -12,16 +13,20 @@ class StaffController extends Controller
     public function index()
     {
         $staffs = Staff::all();
+        $positions = Position::getPositions();
 
-        return view('staff')->with('staffs', $staffs);
+        return view('staff')
+            ->with('staffs', $staffs)
+            ->with('positions', $positions);
     }
 
     /**
-     * スタッフデータ追加
+     * スタッフデータ登録画面
      */
     public function add()
     {
-        return view('staff-add');
+        $positions = Position::getPositions();
+        return view('staff-add')->with('positions', $positions);
     }
 
     /**
@@ -55,16 +60,17 @@ class StaffController extends Controller
         $staff_name = $request->input('staff_name');
         $staff_name_kana = $request->input('staff_name_kana');
         $staff_type = $request->input('staff_type');
-        
+
         $staff = new Staff();
         $staff->name = $staff_name;
         $staff->name_kana = $staff_name_kana;
-        $staff->staff_type = 1;
+        $staff->staff_type = $staff_type;
         $staff->save();
+        session()->flash('flash_message', '登録が完了しました。');
 
         return redirect(route('staffHome'));
     }
-    
+
     /**
      * スタッフデータ削除
      */
@@ -78,9 +84,12 @@ class StaffController extends Controller
      */
     public function edit($id)
     {
-        $data = Staff::find($id);
+        $staff = Staff::find($id);
+        $positions = Position::all();
 
-        return view('staff-edit')->with('data',$data);
+        return view('staff-edit')
+            ->with('staff', $staff)
+            ->with('positions', $positions);
     }
 
     /**
@@ -98,7 +107,8 @@ class StaffController extends Controller
         $staff->name_kana = $staff_name_kana;
         $staff->staff_type = $staff_type;
         $staff->save();
-        
+        session()->flash('flash_message', '更新が完了しました。');
+
         return redirect(route('staffHome'));
     }
 }

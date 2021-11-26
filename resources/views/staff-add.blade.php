@@ -3,24 +3,37 @@
 @section('title', 'スタッフ登録')
 
 @section('content_header')
-    <h1>スタッフ登録</h1>
+<h1>スタッフ登録</h1>
 @stop
 
 @section('content')
-
-<form method="post" action="{{ route('staffConfirm') }}">
-  {{ csrf_field() }}
-  <label for="staff_name">スタッフの名前：</label>
-  <input type="text" name="staff_name" maxlength="10" value="" placeholder="スタッフの名前" id="staff_name">
-  <br>
-  <label for="staff_name_kana">スタッフの名前（かな）：</label>
-  <input type="text" name="staff_name_kana" maxlength="30" value="" placeholder="スタッフの名前(かな)" id="staff_name_kana">
-  <br>
-  <label for="staff_type">職種：</label>
-  <input type="text" name="staff_type" maxlength="10" value="" placeholder="スタッフの職種" id="staff_type">
-  <br>
-  <input type="submit" name="register" value="登録">
-</form>
+<div class="card">
+	<form method="post" action="{{ route('staffConfirm') }}">
+        {{ csrf_field() }}
+        <div class="card-body">
+            <div class="form-group">
+                <label for="staff_name">名前：</label>
+                <input type="text" name="staff_name" class="form-control" id="staff_name" placeholder="名前" required>
+            </div>
+            <div class="form-group">
+                <label for="staff_name_kana">名前（かな）：</label>
+                <input type="text" name="staff_name_kana" class="form-control" id="staff_name_kana" placeholder="かな名" required>
+            </div>
+            <div class="form-group">
+                <label>職種</label>
+                <select name="staff_type" class="form-control" required>
+					<option value=""></option>
+                    @foreach ($positions as $key => $position)
+                    <option value="{{ $position->id }}">{{ $position->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">登録</button>
+        </div>
+    </form>
+</div>
 @stop
 
 @section('css')
@@ -29,6 +42,6 @@
 
 @section('js')
 <script>
-  console.log('Hi!');
+	console.log('Hi!');
 </script>
 @stop
