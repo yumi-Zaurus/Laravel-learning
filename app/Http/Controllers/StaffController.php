@@ -45,10 +45,13 @@ class StaffController extends Controller
         $staff_name = $request->input('staff_name');
         $staff_name_kana = $request->input('staff_name_kana');
         $staff_type = $request->input('staff_type');
+        $position = Position::getPositions();
+        $position_data = $position[$staff_type];
+
         return view('staff-confirm')->with([
             'staff_name' => $staff_name,
             'staff_name_kana' => $staff_name_kana,
-            'staff_type' => $staff_type,
+            'position_data' => $position_data,
         ]);
     }
 
@@ -85,10 +88,12 @@ class StaffController extends Controller
     public function edit($id)
     {
         $staff = Staff::find($id);
-        $positions = Position::all();
+        $staff_type = $staff->staff_type;
+        $positions = Position::getPositions();
 
         return view('staff-edit')
             ->with('staff', $staff)
+            ->with('staff_type', $staff_type)
             ->with('positions', $positions);
     }
 
@@ -112,8 +117,3 @@ class StaffController extends Controller
         return redirect(route('staffHome'));
     }
 }
-
-
-/**
- * TODO: 登録するとき・・・職種名、DBに登録するとき・・・数字、職種名と数字を対応させる
- */

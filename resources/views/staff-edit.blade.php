@@ -18,19 +18,23 @@
             </div>
             <div class="form-group">
                 <label for="staff_name_kana">名前（かな）：</label>
-                <input type="text" name="staff_name_kana" class="form-control" id="staff_name_kana" placeholder="かな名" value="{{ $staff->name_kana }}">
+                <input type="text" name="staff_name_kana" class="form-control" id="staff_name_kana" placeholder="なまえ" value="{{ $staff->name_kana }}">
             </div>
             <div class="form-group">
                 <label>職種</label>
                 <select name="staff_type" class="form-control">
                     @foreach ($positions as $key => $position)
-                    <option value="{{ $position->id }}">{{ $position->name }}</option>
+                        @if ($position->id == $staff_type)
+                           <option value="{{ $position->id }}" selected="selected">{{ $position->name }}</option>
+                        @else
+                            <option value="{{ $position->id }}">{{ $position->name }}</option>
+                        @endif
                     @endforeach
                 </select>
             </div>
         </div>
         <div class="card-footer">
-            <button type="submit" class="btn btn-primary">登録</button>
+            <button type="submit" class="btn btn-primary">更新</button>
         </div>
     </form>
 </div>
