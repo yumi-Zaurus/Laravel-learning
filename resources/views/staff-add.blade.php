@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label>職種</label>
-                <select name="staff_type" class="form-control" required>
+                <select name="position_id" class="form-control" required>
                     <option selected disabled>職業を選択してください</option>
 					@foreach ($positions as $key => $position)
                         <option value="{{ $position->id }}">{{ $position->name }}</option>

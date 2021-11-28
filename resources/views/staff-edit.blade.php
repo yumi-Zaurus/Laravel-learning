@@ -22,10 +22,10 @@
             </div>
             <div class="form-group">
                 <label>職種</label>
-                <select name="staff_type" class="form-control">
+                <select name="position_id" class="form-control">
                     @foreach ($positions as $key => $position)
-                        @if ($position->id == $staff_type)
-                           <option value="{{ $position->id }}" selected="selected">{{ $position->name }}</option>
+                        @if ($position->id == $position_id)
+                            <option value="{{ $position->id }}" selected="selected">{{ $position->name }}</option>
                         @else
                             <option value="{{ $position->id }}">{{ $position->name }}</option>
                         @endif

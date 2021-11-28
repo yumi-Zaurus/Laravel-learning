@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Staff extends Model
 {
     use SoftDeletes;
+
+    /**
+     * ポジションの取得
+     */
+    public function position()
+    {
+        return $this->belongsTo(Position::class);
+    }
 }

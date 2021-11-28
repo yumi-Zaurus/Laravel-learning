@@ -12,12 +12,10 @@ class StaffController extends Controller
 {
     public function index()
     {
-        $staffs = Staff::all();
-        $positions = Position::getPositions();
+        $staffs = Staff::with('Position')->get();
 
         return view('staff')
-            ->with('staffs', $staffs)
-            ->with('positions', $positions);
+            ->with('staffs', $staffs->toArray());
     }
 
     /**
@@ -44,9 +42,9 @@ class StaffController extends Controller
     {
         $staff_name = $request->input('staff_name');
         $staff_name_kana = $request->input('staff_name_kana');
-        $staff_type = $request->input('staff_type');
+        $position_id = $request->input('position_id');
         $position = Position::getPositions();
-        $position_data = $position[$staff_type];
+        $position_data = $position[$position_id];
 
         return view('staff-confirm')->with([
             'staff_name' => $staff_name,
@@ -62,12 +60,12 @@ class StaffController extends Controller
     {
         $staff_name = $request->input('staff_name');
         $staff_name_kana = $request->input('staff_name_kana');
-        $staff_type = $request->input('staff_type');
+        $position_id = $request->input('position_id');
 
         $staff = new Staff();
         $staff->name = $staff_name;
         $staff->name_kana = $staff_name_kana;
-        $staff->staff_type = $staff_type;
+        $staff->position_id = $position_id;
         $staff->save();
         session()->flash('flash_message', '登録が完了しました。');
 
@@ -88,12 +86,12 @@ class StaffController extends Controller
     public function edit($id)
     {
         $staff = Staff::find($id);
-        $staff_type = $staff->staff_type;
+        $position_id = $staff->position_id;
         $positions = Position::getPositions();
 
         return view('staff-edit')
             ->with('staff', $staff)
-            ->with('staff_type', $staff_type)
+            ->with('position_id', $position_id)
             ->with('positions', $positions);
     }
 
@@ -105,12 +103,12 @@ class StaffController extends Controller
         $staff_id = $request->input('staff_id');
         $staff_name = $request->input('staff_name');
         $staff_name_kana = $request->input('staff_name_kana');
-        $staff_type = $request->input('staff_type');
+        $position_id = $request->input('position_id');
 
         $staff = Staff::find($staff_id);
         $staff->name = $staff_name;
         $staff->name_kana = $staff_name_kana;
-        $staff->staff_type = $staff_type;
+        $staff->position_id = $position_id;
         $staff->save();
         session()->flash('flash_message', '更新が完了しました。');
 

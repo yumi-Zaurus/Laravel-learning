@@ -305,7 +305,7 @@ return [
         ],
         [
             'text'    => '管理者',
-            'icon'    => 'fas fa-fw fa-user-edit',
+            'icon'    => 'fas fa-fw fa-user-alt',
             'submenu' => [
                 [
                     'text' => '管理者一覧',
@@ -314,6 +314,16 @@ return [
                 [
                     'text' => '管理者登録',
                     'url'  => '/admin_user',
+                ],
+            ]
+        ],
+        [
+            'text'    => 'データ管理',
+            'icon'    => 'fas fa-fw fa-book',
+            'submenu' => [
+                [
+                    'text' => '職種',
+                    'url'  => '#',
                 ],
             ]
         ],

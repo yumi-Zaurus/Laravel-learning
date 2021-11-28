@@ -39,24 +39,15 @@
                         </thead>
                         <tbody>
                             @foreach ($staffs as $key => $staff)
-                            <tr class="{{ ($staff->id % 2) == 0 ? 'even' : 'odd' }}">
-                                <td>{{ $staff->name }}</td>
-                                <td>{{ $staff->name_kana }}</td>
-                                <td>{{ $positions[$staff->staff_type]->name }}</td>
-                                <td><a href="{{ route('staffEdit', ['id' => $staff->id]) }}" role="button">編集</a></td>
+                            <tr class="{{ ($staff['id'] % 2) == 0 ? 'even' : 'odd' }}">
+                                <td>{{ $staff['name'] }}</td>
+                                <td>{{ $staff['name_kana'] }}</td>
+                                <td>{{ $staff['position']['name'] }}</td>
+                                <td><a href="{{ route('staffEdit', ['id' => $staff['id']]) }}" role="button">編集</a></td>
                                 <td>削除</td>
                             </tr>
                             @endforeach
                         </tbody>
-                        <!-- <tfoot>
-                            <tr>
-                                <th rowspan="1" colspan="1">Rendering engine</th>
-                                <th rowspan="1" colspan="1">Browser</th>
-                                <th rowspan="1" colspan="1">Platform(s)</th>
-                                <th rowspan="1" colspan="1">Engine version</th>
-                                <th rowspan="1" colspan="1">CSS grade</th>
-                            </tr>
-                        </tfoot> -->
                     </table>
                 </div>
             </div>
