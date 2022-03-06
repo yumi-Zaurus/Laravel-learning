@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\TopController;
+use App\Http\Controllers\AppoitmentController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\PatientController;
 
@@ -32,6 +31,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', function () {
         return view('home');
     })->name('home');
+
+    // 予約
+    Route::get('/appoitment-calendar', [AppoitmentController::class, 'calendar'])->name('appoitmentCalendar');
 
     // スタッフ
     Route::get('/staff', [StaffController::class, 'index'])->name('staffHome');

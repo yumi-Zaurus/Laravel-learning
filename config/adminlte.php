@@ -266,12 +266,16 @@ return [
             'icon'    => 'fas fa-fw fa-calendar-alt',
             'submenu' => [
                 [
+                    'text' => '予約カレンダー',
+                    'url'  => '/appoitment-calendar',
+                ],
+                [
                     'text' => '予約一覧',
-                    'url'  => '#',
+                    'url'  => 'appoitment',
                 ],
                 [
                     'text' => '予約登録',
-                    'url'  => '#',
+                    'url'  => 'appoitment-add',
                 ],
             ],
         ],
