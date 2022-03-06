@@ -263,25 +263,28 @@ return [
         // ],
         [
             'text'    => '予約',
-            'icon'    => 'fas fa-fw fa-calendar-alt',
+            'icon'    => 'fas fa-calendar-alt',
             'submenu' => [
                 [
                     'text' => '予約カレンダー',
+                    'icon' => 'fas fa-fw fa-calendar-day',
                     'url'  => '/appoitment-calendar',
                 ],
                 [
                     'text' => '予約一覧',
+                    'icon' => 'fas fa-fw fa-calendar-week',
                     'url'  => 'appoitment',
                 ],
                 [
                     'text' => '予約登録',
+                    'icon' => 'fas fa-fw fa-calendar-plus',
                     'url'  => 'appoitment-add',
                 ],
             ],
         ],
         [
             'text'    => '患者',
-            'icon'    => 'fas fa-fw fa-tooth',
+            'icon'    => 'fas fa-tooth',
             'submenu' => [
                 [
                     'text' => '患者一覧',
@@ -295,21 +298,28 @@ return [
         ],
         [
             'text'    => 'スタッフ',
-            'icon'    => 'fas fa-fw fa-user-alt',
+            'icon'    => 'fas fa-user-alt',
             'submenu' => [
                 [
                     'text' => 'スタッフ一覧',
+                    'icon' => 'fas fa-fw fa-user-alt',
                     'url'  => '/staff',
                 ],
                 [
                     'text' => 'スタッフ登録',
+                    'icon' => 'fas fa-fw fa-user-alt',
                     'url'  => '/staff-add',
+                ],
+                [
+                    'text' => 'スタッフ検索',
+                    'icon' => 'fas fa-fw fa-user-alt',
+                    'url'  => '/staff-search',
                 ],
             ],
         ],
         [
             'text'    => '管理者',
-            'icon'    => 'fas fa-fw fa-user-alt',
+            'icon'    => 'fas fa-user-alt',
             'submenu' => [
                 [
                     'text' => '管理者一覧',
@@ -323,7 +333,7 @@ return [
         ],
         [
             'text'    => 'データ管理',
-            'icon'    => 'fas fa-fw fa-book',
+            'icon'    => 'fas fa-book',
             'submenu' => [
                 [
                     'text' => '職種',
@@ -333,7 +343,7 @@ return [
         ],
         [
             'text'    => 'お知らせ',
-            'icon'    => 'fas fa-duotone fa-bullhorn',
+            'icon'    => 'fas fa-bullhorn',
             'submenu' => [
                 [
                     'text' => 'お知らせ',
@@ -347,7 +357,7 @@ return [
         ],
         [
             'text' => 'ログアウト',
-            'icon'    => 'fas fa-fw sign-out-alt',
+            'icon' => 'fas sign-out-alt',
             'url'  => '/logout',
         ],
 ],
