@@ -332,6 +332,20 @@ return [
             ]
         ],
         [
+            'text'    => 'お知らせ',
+            'icon'    => 'fas fa-duotone fa-bullhorn',
+            'submenu' => [
+                [
+                    'text' => 'お知らせ',
+                    'url'  => '/news',
+                ],
+                [
+                    'text' => 'お知らせ登録',
+                    'url'  => '/#',
+                ],
+            ]
+        ],
+        [
             'text' => 'ログアウト',
             'icon'    => 'fas fa-fw sign-out-alt',
             'url'  => '/logout',
