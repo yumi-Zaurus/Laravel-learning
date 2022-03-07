@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use App\Models\Patient;
+use App\Models\Notification;
 
 
 
-class NewsController extends Controller
+class NotificationController extends Controller
 {
     /**
      * news一覧ページ
      */
     public function index()
     {
-        return view('news');
+        return view('notification');
     }
 
     /**
@@ -22,7 +22,7 @@ class NewsController extends Controller
      */
     public function add()
     {
-        return view('news-add');
+        return view('notification-add');
     }
 
 }
