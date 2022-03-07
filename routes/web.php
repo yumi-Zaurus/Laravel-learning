@@ -54,6 +54,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/patient-add', [PatientController::class, 'add'])->name('patientAdd');
 
     // お知らせ
-    Route::get('/news', [NewsController::class, 'index'])->name('newsHome');
-    Route::post('/news_add', [NewsController::class, 'add'])->name('newsAdd');
+    Route::get('/notification', [NewsController::class, 'index'])->name('notificationHome');
+    Route::post('/notification_add', [NewsController::class, 'add'])->name('notificationAdd');
 });
+
+/**
+ * TODO: いくつかある飛べないページを修正するgit
+ */
