@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AppoitmentController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\NewsController;
 
 
 /*
@@ -51,4 +52,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/patient/{id}', [PatientController::class, 'info'])->name('patientInfo');
     Route::get('/patient/{id}/edit', [PatientController::class, 'edit'])->name('patientEdit');
     Route::get('/patient-add', [PatientController::class, 'add'])->name('patientAdd');
+
+    // お知らせ
+    Route::get('/news', [NewsController::class, 'index'])->name('newsHome');
+    Route::post('/news_add', [NewsController::class, 'add'])->name('newsAdd');
 });
