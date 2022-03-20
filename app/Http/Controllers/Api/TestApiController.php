@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TestAPIController extends Controller
+class TestApiController extends Controller
 {
    public function index()
    {
