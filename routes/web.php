@@ -5,7 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AppoitmentController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\PatientController;
-use App\Http\Controllers\NewsController;
+use App\Http\Controllers\NotificationController;
 
 
 /*
