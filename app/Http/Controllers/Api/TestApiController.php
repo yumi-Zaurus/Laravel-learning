@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TestAPIController extends Controller
+class TestApiController extends Controller
 {
    public function index()
    {
@@ -49,6 +49,13 @@ class TestAPIController extends Controller
          [
             "id" => 6,
             "title" => "休診のお知らせ（４月）",
+            "content" => "働くのが嫌になったため、休診します。",
+            "type" => 2,
+            "date" => "2022-04-03 15:23"
+         ],
+         [
+            "id" => 7,
+            "title" => "ゆみさん",
             "content" => "働くのが嫌になったため、休診します。",
             "type" => 2,
             "date" => "2022-04-03 15:23"
