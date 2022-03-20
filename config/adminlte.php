@@ -347,7 +347,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'お知らせ',
-                    'url'  => '/news',
+                    'url'  => '/notification',
                 ],
                 [
                     'text' => 'お知らせ登録',
