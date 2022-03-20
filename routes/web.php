@@ -54,8 +54,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/patient-add', [PatientController::class, 'add'])->name('patientAdd');
 
     // お知らせ
-    Route::get('/notification', [NewsController::class, 'index'])->name('notificationHome');
-    Route::post('/notification_add', [NewsController::class, 'add'])->name('notificationAdd');
+    Route::get('/notification', [NotificationController::class, 'index'])->name('notificationHome');
+    Route::post('/notification_add', [NotificationController::class, 'add'])->name('notificationAdd');
 });
 
 /**
