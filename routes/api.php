@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\TestApiController;
 use App\Http\Controllers\Api\NotificationApiController;
+use App\Http\Controllers\Api\LoginApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('test', [TestApiController::class, 'index']);
 Route::get('notification', [NotificationApiController::class, 'index']);
+Route::post('login', [LoginApiController::class, 'index']);
