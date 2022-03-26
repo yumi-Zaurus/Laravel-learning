@@ -45,7 +45,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/staff-delete', [StaffController::class, 'delete'])->name('staffDelete');
     Route::get('/staff/{id}', [StaffController::class, 'edit'])->name('staffEdit');
     Route::post('/staff-update', [StaffController::class, 'update'])->name('staffUpdate');
-    // TODO: 削除の設定
 
     // 患者
     Route::get('/patient', [PatientController::class, 'index'])->name('patientHome');
@@ -55,9 +54,12 @@ Route::group(['middleware' => ['auth']], function () {
 
     // お知らせ
     Route::get('/notification', [NotificationController::class, 'index'])->name('notificationHome');
-    Route::post('/notification-add', [NotificationController::class, 'add'])->name('notificationAdd');
+    Route::get('/notification-add', [NotificationController::class, 'add'])->name('notificationAdd');
+    Route::post('/notification/{id}', [NotificationController::class, 'edit'])->name('notificationEdit');
+    Route::post('/notification-confirm', [NotificationController::class, 'confirm'])->name('notificationConfirm');
+    Route::post('/notification-register', [NotificationController::class, 'egister'])->name('notificationRegister');
 });
 
 /**
- * TODO: いくつかある飛べないページを修正するgit
+ * TODO: いくつかある飛べないページを修正する
  */

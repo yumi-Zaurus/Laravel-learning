@@ -351,7 +351,7 @@ return [
                 ],
                 [
                     'text' => 'お知らせ登録',
-                    'url'  => '/#',
+                    'url'  => '/notification-add',
                 ],
             ]
         ],
