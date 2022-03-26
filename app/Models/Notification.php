@@ -52,6 +52,7 @@ class Notification extends Model
                 "id" => $notification['id'],
                 "title" => $notification['title'],
                 "content" => $notification['contents'],
+                "type" => $notification['importance'],
                 "date" => date('Y-m-d H:i', strtotime($notification['delivered_at'])),
             ];
         }
