@@ -7,19 +7,7 @@
 @stop
 
 @section('content')
-<!-- <form method="get" action="{{ route('staffSearch') }}">
-    <input type="search" name="staff_search" placeholder="検索したいスタッフ名">
-    <input type="submit" name="search_button" value="検索">
-</form> -->
-
 <div class="card">
-    <!-- <div class="card-header">
-        <div class="row">
-            <a class="col-3" href="{{ route('staffAdd') }}">スタッフを追加する</a>
-            <input type="search" class="form-control col-3" name="staff_search" placeholder="スタッフ名">
-            <input type="submit" class="btn btn-primary" value="検索">
-        </div>
-    </div> -->
     <div class="card-body">
         <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
             <div class="row">

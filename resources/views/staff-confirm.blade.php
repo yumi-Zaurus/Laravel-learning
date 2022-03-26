@@ -23,9 +23,9 @@
             <td>{{ $position_data->name }}</td>
         </tr>
     </table>
-    <input type="hidden" name="staff_name" value="{{ $staff_name }}" id="staff_name">
-    <input type="hidden" name="staff_name_kana" value="{{ $staff_name_kana }}" id="staff_name_kana">
-    <input type="hidden" name="position_id" value="{{ $position_data->id }}" id="position_name">
+    <input type="hidden" name="staff_name" value="{{ $staff_name }}">
+    <input type="hidden" name="staff_name_kana" value="{{ $staff_name_kana }}">
+    <input type="hidden" name="position_id" value="{{ $position_data->id }}">
     <input type="submit" value="内容を登録する">
     <input type="button" value="内容を修正する" onclick="history.back(-1)">
 </form>
