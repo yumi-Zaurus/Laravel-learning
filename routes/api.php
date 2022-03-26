@@ -21,6 +21,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('test', [TestApiController::class, 'index']);
-Route::get('notification', [NotificationApiController::class, 'index']);
 Route::post('login', [LoginApiController::class, 'index']);
+
+Route::post('notification', [NotificationApiController::class, 'index']);
+Route::post('read', [NotificationApiController::class, 'read']);
+
+Route::get('test', [TestApiController::class, 'index']);
