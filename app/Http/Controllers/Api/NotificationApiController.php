@@ -14,7 +14,7 @@ class NotificationApiController extends Controller
     */
    public function index()
    {
-      $response = Notification::getNotifications();
+      $response = Notification::getOpenNotifications();
 		return $response;
    }
 
