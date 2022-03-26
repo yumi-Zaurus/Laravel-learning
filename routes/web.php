@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/notification-add', [NotificationController::class, 'add'])->name('notificationAdd');
     Route::post('/notification/{id}', [NotificationController::class, 'edit'])->name('notificationEdit');
     Route::post('/notification-confirm', [NotificationController::class, 'confirm'])->name('notificationConfirm');
-    Route::post('/notification-register', [NotificationController::class, 'egister'])->name('notificationRegister');
+    Route::post('/notification-register', [NotificationController::class, 'register'])->name('notificationRegister');
 });
 
 /**
