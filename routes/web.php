@@ -55,7 +55,7 @@ Route::group(['middleware' => ['auth']], function () {
     // お知らせ
     Route::get('/notification', [NotificationController::class, 'index'])->name('notificationHome');
     Route::get('/notification-add', [NotificationController::class, 'add'])->name('notificationAdd');
-    Route::post('/notification/{id}', [NotificationController::class, 'edit'])->name('notificationEdit');
+    Route::get('/notification/{id}', [NotificationController::class, 'edit'])->name('notificationEdit');
     Route::post('/notification-confirm', [NotificationController::class, 'confirm'])->name('notificationConfirm');
     Route::post('/notification-register', [NotificationController::class, 'register'])->name('notificationRegister');
 });
