@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Notification;
 use App\Models\NotificationRead;
 
-class NotificationApiController extends Controller
+class NotificationApiController extends ApiController
 {
    /**
     * お知らせを取得する

@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\PatientAuth;
 
-class LoginApiController extends Controller
+class LoginApiController extends ApiController
 {
    public function index(Request $request)
    {
