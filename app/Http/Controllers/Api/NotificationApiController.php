@@ -12,7 +12,7 @@ class NotificationApiController extends Controller
    /**
     * お知らせを取得する
     */
-   public function index()
+   public function list()
    {
       $response = Notification::getOpenNotifications();
 		return $response;
@@ -30,6 +30,9 @@ class NotificationApiController extends Controller
       $notification_read->patient_id = $patient_id;
       $notification_read->notification_id = $notification_id;
       $notification_read->save();
-   }
 
+      return [
+         'result' => true
+      ];
+   }
 }

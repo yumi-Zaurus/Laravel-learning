@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('login', [LoginApiController::class, 'index']);
 
-Route::post('notification', [NotificationApiController::class, 'index']);
-Route::post('read', [NotificationApiController::class, 'read']);
+Route::post('notification/list', [NotificationApiController::class, 'list']);
+Route::post('notification/read', [NotificationApiController::class, 'read']);
 
 Route::get('test', [TestApiController::class, 'index']);

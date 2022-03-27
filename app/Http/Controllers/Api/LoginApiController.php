@@ -19,6 +19,14 @@ class LoginApiController extends Controller
          'password' => $password
       ])->first();
 
+      if (!$patient_auth) {
+         return [
+            'auth' => false,
+            'patient_id' => null,
+            'token' => null
+            ];
+      }
+
       // token発行
       $token = uniqid(bin2hex(random_bytes(10)));
 
@@ -27,6 +35,7 @@ class LoginApiController extends Controller
       $patient_auth->save();
 
       return [
+         'auth' => true,
          'patient_id' => $patient_auth->patient_id,
          'token' => $token
       ];
