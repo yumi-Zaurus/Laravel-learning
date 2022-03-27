@@ -54,6 +54,7 @@ class Notification extends Model
                 "content" => $notification['contents'],
                 "type" => $notification['importance'],
                 "date" => date('Y-m-d H:i', strtotime($notification['delivered_at'])),
+                "isRead" => (bool)rand(0, 1) // TODO: ユーザーがこのお知らせを既読しているかどうかを判定して返却する
             ];
         }
         return $notification_data;
