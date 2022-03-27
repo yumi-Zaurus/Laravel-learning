@@ -17,15 +17,15 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" role="grid" aria-describedby="example2_info">
+                    <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" role="grid" aria-describedby="example2_info" style="table-layout: fixed; width: 100%;">
                         <thead>
                             <tr role="row">
-                                <th class="sorting sorting_asc" tabindex="1" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">タイトル</th>
-                                <th class="sorting" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">内容</th>
-                                <th class="sorting" tabindex="2" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">重要度</th>
-                                <th class="sorting" tabindex="3" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">公開日</th>
-                                <th></th>
-                                <th></th>
+                                <th class="sorting sorting_asc" tabindex="1" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 20%;">タイトル</th>
+                                <th aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 30%;">内容</th>
+                                <th class="sorting" tabindex="2" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 5%;">重要度</th>
+                                <th class="sorting" tabindex="3" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 15%;">公開日</th>
+                                <th style="width: 5%;"></th>
+                                <th style="width: 5%;"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -74,6 +74,14 @@
 
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+<style type="text/css">
+    td {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 0;
+    }
+</style>
 @stop
 
 @section('js')

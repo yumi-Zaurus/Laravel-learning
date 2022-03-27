@@ -15,11 +15,11 @@
         <div class="card-body">
             <div class="form-group">
                 <label for="title">お知らせタイトル：</label>
-                <input type="text" name="title" class="form-control" id="title" placeholder="タイトル" required>
+                <input type="text" name="title" class="form-control" id="title" placeholder="お知らせのタイトルをここに入力してください" required>
             </div>
             <div class="form-group">
                 <label for="contents">内容：</label>
-                <input type="text" name="contents" class="form-control" id="contents" placeholder="内容" required>
+                <textarea class="form-control" name="contents" id="contents" cols="30" rows="10" placeholder="お知らせの内容をここに入力してください" required></textarea>
             </div>
             <div class="form-group">
                 <label>重要度：</label>
