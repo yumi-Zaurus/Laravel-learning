@@ -17,6 +17,14 @@ class Notification extends Model
     const IMPORTANCE_HIGH = 3; // 重要度高
 
     /**
+     * お知らせの既読情報を取得
+     */
+    public function notificationRead()
+    {
+        return $this->hasmany(NotificationRead::class);
+    }
+
+    /**
      * お知らせを取得する
      */
     static function getNotifications()
@@ -43,18 +51,25 @@ class Notification extends Model
      * 公開されているお知らせを取得する
      * return array
      */
-    static function getOpenNotifications()
+    static function getOpenNotifications($patient_id)
     {
         $notifications = Notification::where('is_open', 1)->get();
         $notification_data = [];
+        $patient_id = $patient_id;
         foreach ($notifications as $notification) {
+            if (is_null($notification[$patient_id])){
+                $is_read = 0;
+            } else {
+                $is_read = 1;
+            }
             $notification_data[] = [
                 "id" => $notification['id'],
                 "title" => $notification['title'],
                 "content" => $notification['contents'],
                 "type" => $notification['importance'],
                 "date" => date('Y-m-d H:i', strtotime($notification['delivered_at'])),
-                "isRead" => (bool)rand(0, 1) // TODO: ユーザーがこのお知らせを既読しているかどうかを判定して返却する
+                // "isRead" => (bool)rand(0, 1) // TODO: ユーザーがこのお知らせを既読しているかどうかを判定して返却する
+                "isRead" => $is_read,
             ];
         }
         return $notification_data;
@@ -79,6 +94,7 @@ class Notification extends Model
         }
         return $importance;
     }
+
 
 
 }
