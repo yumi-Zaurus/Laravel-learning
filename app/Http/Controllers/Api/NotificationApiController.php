@@ -11,9 +11,10 @@ class NotificationApiController extends ApiController
    /**
     * お知らせを取得する
     */
-   public function list()
+   public function list(Request $request)
    {
-      $response = Notification::getOpenNotifications();
+      $patient_id = $request->input('patient_id');
+      $response = Notification::getOpenNotifications($patient_id);
 		return $response;
    }
 
