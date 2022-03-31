@@ -24,22 +24,22 @@
             <div class="form-group">
                 <label>重要度：</label>
                 <select name="importance" class="form-control" required>
-                    <option value=3>高</option>
-                    <option value=2>中</option>
                     <option value=1 selected>低</option>
+                    <option value=2>中</option>
+                    <option value=3>高</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="delivered_at">公開日：</label>
-                <input type="datetime-local" name="delivered_at" class="form-control" id="delivered_at" placeholder="内容" required>
+                <input type="datetime-local" name="delivered_at" class="form-control" id="delivered_at" required>
             </div>
             <div class="form-group">
                 <span>
-                    <input type="radio" name="is_open" id="open" value=1 >
+                    <input type="radio" name="is_open" id="open" value=1 required>
                     <label for="open">公開</label>
                 </span>
                 <span>
-                    <input type="radio" name="is_open" id="private" value=0 required>
+                    <input type="radio" name="is_open" id="private" value=0>
                     <label for="private">非公開</label>
                 </span>
             </div>
