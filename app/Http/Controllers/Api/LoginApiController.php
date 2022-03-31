@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Models\PatientAuth;
 
-class LoginApiController extends ApiController
+use App\Http\Controllers\Controller;
+
+class LoginApiController extends Controller
 {
    public function index(Request $request)
    {
